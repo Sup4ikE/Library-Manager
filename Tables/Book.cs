@@ -7,7 +7,7 @@ public class Book
     public string Author { get; set; }
     public string Genre { get; set; }
     public int YearPublished { get; set; }
-    public string CopiesAvailable {get; set;} 
+    public int CopiesAvailable {get; set;} 
     
     public ICollection<Borrow> Borrows { get; set; }
 }

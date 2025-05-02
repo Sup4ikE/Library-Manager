@@ -1,9 +1,12 @@
 ﻿using Library_Manager;
+using Library_Manager.TablesContexts;
 
 class Program
 {
     static void Main(string[] args)
     {
+        BooksContext booksContext = new BooksContext();
+        
         using (var context = new Context())
         {
             Console.WriteLine("Welcome to the Library Manager!");
@@ -33,12 +36,16 @@ class Program
                 switch (a)
                 {
                     case 1:
+                        booksContext.ListBooks();
                         break;
                     case 2:
+                        booksContext.AddBook();
                         break;
                     case 3:
+                        booksContext.UpdateBook();
                         break;
                     case 4:
+                        booksContext.DeleteBook();
                         break;
                     case 5:
                         break;
