@@ -6,6 +6,7 @@ class Program
     static void Main(string[] args)
     {
         BooksContext booksContext = new BooksContext();
+        UsersContexts usersContexts = new UsersContexts();
         
         using (var context = new Context())
         {
@@ -48,12 +49,16 @@ class Program
                         booksContext.DeleteBook();
                         break;
                     case 5:
+                        usersContexts.ListUsers();
                         break;
                     case 6:
+                        usersContexts.AddUser();
                         break;
                     case 7:
+                        usersContexts.UpdateUser();
                         break;
                     case 8:
+                        usersContexts.DeleteUser();
                         break;
                     case 9:
                         break;
