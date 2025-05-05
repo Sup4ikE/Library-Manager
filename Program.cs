@@ -7,6 +7,7 @@ class Program
     {
         BooksContext booksContext = new BooksContext();
         UsersContexts usersContexts = new UsersContexts();
+        BorrowsContext borrowsContext = new BorrowsContext();
         
         using (var context = new Context())
         {
@@ -29,7 +30,7 @@ class Program
                 Console.WriteLine("Books Operations:");
                 Console.WriteLine("9.  Borrow a book to user");
                 Console.WriteLine("10. Return a book to library");
-                Console.WriteLine("11. View all borrows books");
+                Console.WriteLine("11. View all history of borrows books");
                 Console.WriteLine("----------------------------");
                 Console.WriteLine("0. Exit");
                 int a = int.Parse(Console.ReadLine());
@@ -61,10 +62,13 @@ class Program
                         usersContexts.DeleteUser();
                         break;
                     case 9:
+                        borrowsContext.borrowBook();
                         break;
                     case 10:
+                        borrowsContext.returnBook();
                         break;
                     case 11:
+                        borrowsContext.listBorrows();
                         break;
                     case 0:
                         return;
@@ -76,7 +80,3 @@ class Program
         }
     }
 }
-
-// git add .
-// git commit -m "Initial commit"
-// git push origin main
