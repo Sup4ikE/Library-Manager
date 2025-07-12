@@ -22,4 +22,3 @@ Library Manager is a C# console application for managing a library system using 
 ✅ Completed  
 
 This was a personal learning project.
-
